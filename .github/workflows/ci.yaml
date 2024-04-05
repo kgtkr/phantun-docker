@@ -13,6 +13,14 @@ jobs:
         with:
           repository: dndx/phantun
           ref: ${{ env.VERSION }}
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: dndx/phantun
+          ref: 792ee46ec443276b4ae665e8671f54842ca13d92 # master
+          path: phantun-master
+      - name: Copy Dockerfile
+        run: cp -r phantun-master/docker docker
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
