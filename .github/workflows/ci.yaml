@@ -26,6 +26,7 @@ jobs:
           cat <<EOF >> docker/Dockerfile
           RUN apt-get update && apt-get install -y iptables tzdata iproute2
           EOF
+          rm -rf phantun-master
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
