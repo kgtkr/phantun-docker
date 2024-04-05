@@ -13,6 +13,7 @@ jobs:
         with:
           repository: dndx/phantun
           ref: ${{ env.VERSION }}
+      # masterにしかdocker/Dockerfileがないので、masterからコピーする
       - name: Checkout
         uses: actions/checkout@v3
         with:
